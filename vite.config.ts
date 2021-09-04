@@ -1,38 +1,38 @@
-import reactRefresh from "@vitejs/plugin-react-refresh";
-import istanbul from "rollup-plugin-istanbul";
-import { defineConfig } from "vite";
-import { VitePWA } from "vite-plugin-pwa";
-import tsconfigPaths from "vite-tsconfig-paths";
+import reactRefresh from '@vitejs/plugin-react-refresh'
+import istanbul from 'rollup-plugin-istanbul'
+import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig(({ mode }) => ({
   esbuild: {
-    jsxInject: `import React from 'react'`,
+    jsxInject: "import React from 'react'",
   },
   plugins: [
     tsconfigPaths(),
     reactRefresh(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: 'autoUpdate',
       manifest: {
-        theme_color: "#BD34FE",
+        theme_color: '#BD34FE',
         icons: [
           {
-            src: "/android-chrome-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "any maskable",
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
           {
-            src: "/android-chrome-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
+            src: '/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
           },
         ],
       },
     }),
-    mode === "test" &&
+    mode === 'test' &&
       istanbul({
-        include: ["src/**/*.tsx"],
+        include: ['src/**/*.tsx'],
       }),
   ],
-}));
+}))

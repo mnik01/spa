@@ -85,5 +85,5 @@
 // }
 
 export default function DetailsPage() {
-  return <div>details</div>;
+  return <div>details</div>
 }
