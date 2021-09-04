@@ -5,6 +5,9 @@ import { VitePWA } from "vite-plugin-pwa";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ mode }) => ({
+  esbuild: {
+    jsxInject: `import React from 'react'`,
+  },
   plugins: [
     tsconfigPaths(),
     reactRefresh(),

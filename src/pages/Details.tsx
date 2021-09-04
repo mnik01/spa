@@ -3,7 +3,6 @@
 // import Head from "components/Head";
 // import ImageAttribution from "components/ImageAttribution";
 // import LoadingOrError from "components/LoadingOrError";
-import React from "react";
 // import { useQuery } from "react-query";
 // import { Link, Redirect, RouteComponentProps } from "react-router-dom";
 

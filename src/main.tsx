@@ -1,5 +1,5 @@
 import App from "App";
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { registerSW } from "virtual:pwa-register";
 import "./index.css";
@@ -7,8 +7,8 @@ import "./index.css";
 registerSW();
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.querySelector("#root")
 );
