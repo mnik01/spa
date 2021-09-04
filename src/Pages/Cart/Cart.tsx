@@ -1,3 +1,5 @@
 import { FC } from 'react'
 
-export const CartPage: FC = () => <p>Cart page</p>
+const CartPage: FC = () => <p>Cart page</p>
+
+export default CartPage

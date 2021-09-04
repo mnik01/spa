@@ -1,3 +1,11 @@
+import { Page } from 'Core/Components/Page'
 import { FC } from 'react'
 
-export const MainPage: FC = () => <p>Main page</p>
+const MainPage: FC = () => (
+  <Page>
+    {Array.from({ length: 90 }).map(() => (
+      <p>hello</p>
+    ))}
+  </Page>
+)
+export default MainPage

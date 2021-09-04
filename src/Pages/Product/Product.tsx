@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
-export const Product: FC = () => <p>Product</p>
+const Product: FC = () => <p>Product</p>
+export default Product
 // import getFruits from "api/getFruits";
 // import BackIcon from "components/BackIcon";
 // import Head from "components/Head";
@@ -86,7 +87,3 @@ export const Product: FC = () => <p>Product</p>
 //     </>
 //   );
 // }
-
-export default function DetailsPage() {
-  return <div>details</div>
-}

@@ -1,0 +1,3 @@
+.a-container {
+  @apply container mx-auto md:px-8 sm:px-0 sm:w-full;
+}

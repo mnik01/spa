@@ -39,6 +39,15 @@
         "prettier"
       ],
       "rules": {
+        "unicorn/prevent-abbreviations": [
+          "error",
+          {
+            "allowList": {
+              "Props": true
+            }
+          }
+        ],
+        "react/prop-types": 0,
         "import/prefer-default-export": "off",
         "semi": [2, "never"],
         "react/react-in-jsx-scope": "off",
