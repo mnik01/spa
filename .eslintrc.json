@@ -39,6 +39,7 @@
         "prettier"
       ],
       "rules": {
+        "import/prefer-default-export": "off",
         "semi": [2, "never"],
         "react/react-in-jsx-scope": "off",
         "import/namespace": "off",

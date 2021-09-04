@@ -1,3 +1,6 @@
+import { FC } from 'react'
+
+export const Product: FC = () => <p>Product</p>
 // import getFruits from "api/getFruits";
 // import BackIcon from "components/BackIcon";
 // import Head from "components/Head";
