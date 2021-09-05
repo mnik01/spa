@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Button } from '../Button'
 import { Container } from '../Container'
 
 export const Header: FC = () => (
@@ -6,9 +7,11 @@ export const Header: FC = () => (
     <div className="a-main-shadowed rounded-b-2xl h-16 flex justify-between px-4">
       logo
       <div className="flex gap-x-4 self-center">
-        <button type="button">Корзина</button>
-        <button type="button">Ru</button>
+        <Button text="Корзина" />
+        <Button text="Ru" />
+
         {/* TODO: i18n */}
+        {/* TODO: footer */}
       </div>
     </div>
   </Container>

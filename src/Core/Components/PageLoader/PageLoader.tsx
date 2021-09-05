@@ -1,4 +1,4 @@
-import { randBeetwen } from 'Core/Utils/randBeetwen'
+import { randBeetwen } from 'Core/Utils'
 import { FC } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { Container } from '../Container'

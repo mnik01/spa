@@ -1,0 +1,7 @@
+.button {
+  @apply bg-indigo-900 text-gray-50 p-2 rounded-sm uppercase;
+}
+
+/* .button_disabled {
+  @apply;
+} */
