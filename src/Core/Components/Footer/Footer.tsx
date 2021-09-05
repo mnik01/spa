@@ -1,12 +1,23 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Modal } from '../Modal'
 
 export const Footer: FC = () => {
   const { t } = useTranslation()
-  const toolsHandler = () => {}
+  const [isModalOpened, setIsModalOpened] = useState(false)
+  const toolsHandler = () => {
+    setIsModalOpened(true)
+  }
 
   return (
     <footer className="items-center p-4 footer bg-neutral text-neutral-content">
+      <Modal
+        onClose={() => {
+          setIsModalOpened(false)
+        }}
+        isOpen={isModalOpened}>
+        asdasd
+      </Modal>
       <div className="flex items-center">
         <svg
           width="24"
