@@ -1,5 +1,6 @@
 import { PageLoader } from 'Core/Components/PageLoader'
 import { skeletonBgColor, skeletonFgColor } from 'Core/constants'
+import { Pages } from 'Core/types'
 import { I18nContext, i18nContextDefaultValue } from 'i18n'
 import { lazy, ReactElement, Suspense } from 'react'
 import { SkeletonTheme } from 'react-loading-skeleton'
@@ -29,13 +30,13 @@ export default function App(): ReactElement {
         <BrowserRouter>
           <Suspense fallback={<PageLoader />}>
             <Switch>
-              <Route exact path="/" component={MainPage} />
-              <Route path="/cart" component={CartPage} />
-              <Route path="/checkout" component={CheckoutPage} />
+              <Route exact path={Pages.Main} component={MainPage} />
+              <Route path={Pages.Cart} component={CartPage} />
+              <Route path={Pages.Checkout} component={CheckoutPage} />
               <Route path="/orders" component={CheckoutPage} />
               <Route path="/order/:orderId" component={CheckoutPage} />
               <Route path="/p/:sku" component={CheckoutPage} />
-              <Route path="/dev-loader" component={PageLoader} />
+              <Route path={Pages.Loading} component={PageLoader} />
             </Switch>
           </Suspense>
         </BrowserRouter>
