@@ -6,7 +6,7 @@ import { PageProps } from './types'
 
 export const Page: FC<PageProps> = ({ shouldShowHeader = true, children }) => (
   <Scrollbars style={{ width: '100vw', height: '100vh' }}>
-    <div className="text-gray-700">
+    <div id="scrollContainer" className="text-gray-700">
       {shouldShowHeader && <Header />}
 
       <Container className="py-6 h-full">

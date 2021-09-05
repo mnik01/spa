@@ -16,6 +16,8 @@
     "lint:fix": "yarn eslint --fix ."
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "clsx": "^1.1.1",
     "daisyui": "^1.14.0",
     "i18next": "^20.6.0",
     "i18next-browser-languagedetector": "^6.1.2",

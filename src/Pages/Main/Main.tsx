@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 const MainPage: FC = () => (
   <Page>
-    {Array.from({ length: 90 }).map(() => (
+    {Array.from({ length: 40 }).map(() => (
       <p>hello</p>
     ))}
   </Page>
