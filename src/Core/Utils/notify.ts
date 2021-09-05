@@ -1,8 +1,20 @@
 import { toast } from 'react-toastify'
 
-type NotifyTypes = 'warn' | 'err'
+type NotifyTypes = 'warn' | 'err' | 'info'
 
-export const notify = (text: string, type?: NotifyTypes): void => {
+type ToastPosition =
+  | 'top-right'
+  | 'top-center'
+  | 'top-left'
+  | 'bottom-right'
+  | 'bottom-center'
+  | 'bottom-left'
+
+export const notify = (
+  text: string,
+  type?: NotifyTypes,
+  parameters?: { position: ToastPosition },
+): void => {
   switch (type) {
     case 'err':
       toast.info(text, {
@@ -13,6 +25,7 @@ export const notify = (text: string, type?: NotifyTypes): void => {
         pauseOnHover: true,
         draggable: true,
         theme: 'dark',
+        ...parameters,
       })
       break
 
@@ -25,6 +38,7 @@ export const notify = (text: string, type?: NotifyTypes): void => {
         pauseOnHover: true,
         draggable: true,
         theme: 'dark',
+        ...parameters,
       })
       break
 
@@ -37,6 +51,7 @@ export const notify = (text: string, type?: NotifyTypes): void => {
         pauseOnHover: true,
         draggable: true,
         theme: 'dark',
+        ...parameters,
       })
       break
   }

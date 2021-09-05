@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import './styles/aliases.css'
 import { ButtonProps } from './types'
 
 export const Button: FC<ButtonProps> = ({
