@@ -1,5 +1,6 @@
 const defaultConfig = require('tailwindcss/defaultConfig')
 const formsPlugin = require('@tailwindcss/forms')
+const daisyui = require('daisyui')
 
 module.exports = {
   mode: 'jit',
@@ -10,5 +11,5 @@ module.exports = {
     },
   },
   darkMode: 'media',
-  plugins: [formsPlugin],
+  plugins: [formsPlugin, daisyui],
 }

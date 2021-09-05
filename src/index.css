@@ -38,8 +38,3 @@
 .a-main-shadowed {
   @apply bg-purple-100 shadow-xl;
 }
-
-.asasd {
-  color: #d6d2eb;
-  background-color: #a5a1b9;
-}

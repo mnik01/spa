@@ -47,6 +47,7 @@
             }
           }
         ],
+        "unicorn/consistent-function-scoping": "off",
         "react/prop-types": 0,
         "import/prefer-default-export": "off",
         "semi": [2, "never"],

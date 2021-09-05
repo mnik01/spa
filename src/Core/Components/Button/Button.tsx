@@ -8,7 +8,7 @@ export const Button: FC<ButtonProps> = ({
   text,
 }) => (
   <button
-    className={`button ${isDisabled ? 'button_disabled' : ''}`}
+    className={`btn btn-sm ${isDisabled ? 'btn-disabled	' : ''}`}
     type="button"
     onClick={onClick}
     disabled={isDisabled}>
