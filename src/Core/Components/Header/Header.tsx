@@ -76,7 +76,7 @@ export const Header: FC = () => {
       className={clsx('transition-all sticky top-0', {
         'w-full': needToFixHeader,
       })}>
-      <div
+      <header
         className={clsx(
           'transition-all a-main-shadowed h-16 flex justify-between px-4',
           {
@@ -94,9 +94,8 @@ export const Header: FC = () => {
             onClick={langChangeHandler}
             text={isRussian ? t('common.ru') : t('common.en')}
           />
-          {/* TODO: footer */}
         </div>
-      </div>
+      </header>
     </Container>
   )
 }

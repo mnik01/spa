@@ -10,7 +10,7 @@ module.exports = {
     fontFamily: {
       sans: ['Inter', defaultConfig.theme.fontFamily.sans],
     },
-    textColor: { ...defaultConfig.theme.text, primary: '#2A2E37' },
+    textColor: { primary: '#2A2E37', white: '#EDE9FE' },
   },
   darkMode: 'media',
   plugins: [formsPlugin, typo, daisyui],
