@@ -1,12 +1,16 @@
 import { Page } from 'Core/Components/Page'
 import { FC } from 'react'
 
-const CartPage: FC = () => (
-  <Page>
-    {Array.from({ length: 90 }).map(() => (
-      <p>hello</p>
-    ))}
-  </Page>
-)
+const CartPage: FC = () => {
+  const nums: number[] = Array.from({ length: 20 })
+
+  return (
+    <Page>
+      {nums.map(element => (
+        <p key={`${element}`}>hello</p>
+      ))}
+    </Page>
+  )
+}
 
 export default CartPage

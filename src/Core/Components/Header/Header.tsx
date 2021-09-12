@@ -15,6 +15,7 @@ export const Header: FC = () => {
   const isRussian = i18n.language === 'ru'
   const redirect = useRedirect()
   const { isMainPage } = useGetCurrentPath()
+  const HEADER_SPEAD_VALUE = 64
 
   const changePageHandler = () => {
     if (isMainPage) {
@@ -35,7 +36,6 @@ export const Header: FC = () => {
       changeLang('ru')
     }
   }
-
   const [isMobileViewport] = useIsMobile()
   const [headerScrolled, setHeaderScrolled] = useState(false)
   const needToFixHeader = headerScrolled && !isMobileViewport
@@ -51,7 +51,7 @@ export const Header: FC = () => {
       const scrollHandler = () => {
         if (!ticking) {
           window.requestAnimationFrame(() => {
-            if (scrollContainer.scrollTop >= 200) {
+            if (scrollContainer.scrollTop >= HEADER_SPEAD_VALUE) {
               setHeaderScrolled(true)
             } else {
               setHeaderScrolled(false)

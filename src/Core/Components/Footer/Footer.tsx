@@ -1,4 +1,5 @@
-import { FC, useState } from 'react'
+import clsx from 'clsx'
+import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from '../Modal'
 
@@ -8,9 +9,32 @@ export const Footer: FC = () => {
   const toolsHandler = () => {
     setIsModalOpened(true)
   }
+  const viewportHeight = Math.max(
+    document.documentElement.clientHeight,
+    window.innerHeight || 0,
+  )
+
+  const [pageHeight, setPageHeight] = useState(0)
+  useEffect(() => {
+    const scrollContainerNode = document.querySelector('#scrollContainer')
+
+    setPageHeight(
+      scrollContainerNode
+        ? scrollContainerNode.getBoundingClientRect().height
+        : 0,
+    )
+  }, [])
+
+  const isAbsoluteNeeded = pageHeight < viewportHeight
 
   return (
-    <footer className="items-center p-4 footer bg-neutral text-neutral-content">
+    <footer
+      className={clsx(
+        'items-center p-4 footer bg-neutral text-neutral-content',
+        {
+          'bottom-0 absolute': isAbsoluteNeeded,
+        },
+      )}>
       <Modal
         onClose={() => {
           setIsModalOpened(false)
