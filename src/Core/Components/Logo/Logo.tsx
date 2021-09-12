@@ -8,7 +8,7 @@ export interface LogoProps {
 
 export const Logo: FC<LogoProps> = ({ className, onClick = () => {} }) => (
   <button className="flex gap-4" onClick={onClick} type="button">
-    <button type="button" className={clsx('btn btn-circle', className)}>
+    <div className={clsx('btn btn-circle', className)}>
       <svg
         version="1.1"
         id="Capa_1"
@@ -27,7 +27,7 @@ export const Logo: FC<LogoProps> = ({ className, onClick = () => {} }) => (
 			l-0.758,0.764L167.108,311.903z"
         />
       </svg>
-    </button>
+    </div>
     <h1 className="prose-2xl font-black font-sans text-primary self-center">
       mnik01
     </h1>

@@ -2,13 +2,13 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import clsx from 'clsx'
 import { FC, useEffect, useState } from 'react'
 import ReactModal from 'react-modal'
-import { ArrowDownIcon, CloseIcon } from '../Icons'
-// import './Modal.scss'
+import { CloseIcon } from '../Icons'
+import './styles/Modal.css'
 import { ContentVerticalAlign, ModalProps } from './types'
 
 const defaultProps = {
   contentLabel: 'Модальное окно',
-  closeBtnText: 'Назад',
+  closeText: 'Назад',
   closeTimeoutMS: 400,
   contentVerticalAlign: 'middle' as ContentVerticalAlign,
 }
@@ -16,11 +16,11 @@ const defaultProps = {
 const Modal: FC<ModalProps> = ({
   className,
   children,
-  closeBtnText,
+  isTextClose = false,
   contentVerticalAlign,
   isMobilePage,
   isShowCloseBtn,
-  isTextClose,
+  closeText,
   onClose,
   isOpen,
   title,
@@ -44,45 +44,44 @@ const Modal: FC<ModalProps> = ({
   return (
     <ReactModal
       ariaHideApp={false}
-      className={clsx('ModalNext', className)}
+      className={clsx('custom-modal', className)}
       contentRef={(node): void => setModalReference(node)}
       isOpen={isOpen}
       onRequestClose={onClose}
       overlayClassName={clsx(
-        'OverlayNext',
+        'custom-modal-overlay',
         isMobilePage && '--mobile-page',
-        `ReactModal__Overlay-ContentVerticalAlign-${String(
-          contentVerticalAlign,
-        )[0].toUpperCase()}${contentVerticalAlign?.slice(1) ?? ''}`,
+        `--vertical-${String(contentVerticalAlign)[0].toLowerCase()}`,
       )}
       style={{
         content: {
           transition: `${transitionDuration}ms`,
         },
+        overlay: {
+          transition: `${transitionDuration}ms`,
+        },
       }}
       {...properties}>
-      {Boolean(isShowCloseBtn) && Boolean(!isMobilePage) && (
-        <button
-          type="button"
-          className={clsx(
-            'ModalNext__CloseBtn',
-            isTextClose
-              ? 'ModalNext__CloseBtn-Text'
-              : 'ModalNext__CloseBtn-Cross',
-            'reset-button-styles',
-          )}
-          onClick={onClose}>
-          {Boolean(isTextClose) && (
-            <>
-              <ArrowDownIcon />
-              {closeBtnText?.trim() || defaultProps.closeBtnText}
-            </>
-          )}
-          {!isTextClose && <CloseIcon height={24} width={24} />}
-        </button>
-      )}
-      {Boolean(title?.trim()) && { title }}
-      {children}
+      <div className="flex flex-col">
+        {Boolean(isShowCloseBtn) && Boolean(!isMobilePage) && (
+          <button
+            type="button"
+            className={clsx(
+              'custom-modal__close-btn',
+              !isTextClose && 'flex justify-end',
+            )}
+            onClick={onClose}>
+            {isTextClose && (
+              <div className="flex flex-row-reverse justify-between">
+                <CloseIcon />
+                {closeText}
+              </div>
+            )}
+            {!isTextClose && <CloseIcon height={24} width={24} />}
+          </button>
+        )}
+        {children}
+      </div>
     </ReactModal>
   )
 }

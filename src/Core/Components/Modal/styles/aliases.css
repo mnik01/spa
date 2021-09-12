@@ -1,0 +1,17 @@
+.custom-modal {
+  @apply absolute top-1/2 left-1/2;
+  @apply p-4 rounded-2xl;
+
+  transform: translate(-50%, -50%);
+  background-color: #ede9fe;
+}
+
+.custom-modal-overlay {
+  @apply absolute w-screen h-screen;
+
+  background-color: rgba(0, 0, 0, 0.438);
+}
+
+.ReactModalPortal {
+  @apply absolute top-0;
+}

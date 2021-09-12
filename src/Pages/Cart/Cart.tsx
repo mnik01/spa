@@ -7,7 +7,7 @@ const CartPage: FC = () => {
   return (
     <Page>
       {nums.map(element => (
-        <p key={`${element}`}>hello</p>
+        <p key={`${element} - ${Math.random()}`}>hello</p>
       ))}
     </Page>
   )

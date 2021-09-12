@@ -27,7 +27,12 @@ export const PageLoader: FC = () => {
       <Container className="py-6 h-full">
         <div className="a-main-shadowed flex flex-col gap-y-4 p-8 sm:rounded-2xl h-5/6">
           {skeletonsWidths.map(width => (
-            <Skeleton wrapper={SkeletonWrapper} height={24} width={width} />
+            <Skeleton
+              key={width}
+              wrapper={SkeletonWrapper}
+              height={24}
+              width={width}
+            />
           ))}
         </div>
       </Container>

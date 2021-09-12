@@ -3,7 +3,7 @@ import ReactModal from 'react-modal'
 export type ContentVerticalAlign = 'top' | 'middle' | 'bottom'
 
 export interface ModalProps extends Omit<ReactModal.Props, 'isOpen'> {
-  closeBtnText?: string
+  closeText?: string
   contentVerticalAlign?: ContentVerticalAlign
   isMobilePage?: boolean
   isOpen: boolean
