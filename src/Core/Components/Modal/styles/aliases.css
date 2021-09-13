@@ -1,17 +1,49 @@
+:root {
+  --modal-animation: mobile-show 0.1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+/* TODO: все файлы алиасов переименовать в файлы стилей */
+.custom-modal.--mobile {
+  @apply bottom-0 left-0 top-auto w-full;
+  @apply rounded-t-2xl;
+
+  transform: unset;
+  animation: mobile-modal-show 0.15s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 .custom-modal {
   @apply absolute top-1/2 left-1/2;
-  @apply p-4 rounded-2xl;
+  @apply p-4 md:rounded-2xl;
 
   transform: translate(-50%, -50%);
+  animation: var(--modal-animation);
   background-color: #ede9fe;
 }
 
 .custom-modal-overlay {
   @apply absolute w-screen h-screen;
 
+  animation: var(--modal-animation);
   background-color: rgba(0, 0, 0, 0.438);
 }
 
 .ReactModalPortal {
   @apply absolute top-0;
+}
+
+@keyframes mobile-modal-show {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes mobile-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

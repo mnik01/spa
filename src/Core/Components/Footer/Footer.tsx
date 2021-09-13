@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { useIsMobile } from 'Core/Hooks/useIsMobile'
 import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from '../Modal'
@@ -61,6 +62,7 @@ export const Footer: FC = () => {
     setIsModalOpened(false)
   }
 
+  const [isMobileViewport] = useIsMobile()
   return (
     <footer
       className={clsx(
@@ -70,15 +72,16 @@ export const Footer: FC = () => {
         },
       )}>
       <Modal
+        isMobile={isMobileViewport}
         isShowCloseBtn
         onClose={onModalCloseHandler}
         isOpen={isModalOpened}>
-        {/* bg-gray-600 text-white rounded-xl */}
         <div className="p-5 mt-4 text-center">
           <p>React</p>
           <p>ES6+</p>
           <p>React router dom</p>
           <p>i18n</p>
+          <p>tailwind</p>
         </div>
       </Modal>
       <div className="flex items-center">
@@ -98,7 +101,7 @@ export const Footer: FC = () => {
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
         {socialMedias.map(({ href, alt, path }) => (
-          <div key={`${alt}`}>
+          <button type="button" key={`${alt}`}>
             <a href={href}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +112,7 @@ export const Footer: FC = () => {
                 <path d={path} />
               </svg>
             </a>
-          </div>
+          </button>
         ))}
       </div>
     </footer>

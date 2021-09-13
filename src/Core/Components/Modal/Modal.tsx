@@ -9,7 +9,7 @@ import { ContentVerticalAlign, ModalProps } from './types'
 const defaultProps = {
   contentLabel: 'Модальное окно',
   closeText: 'Назад',
-  closeTimeoutMS: 400,
+  // closeTimeoutMS: 140,
   contentVerticalAlign: 'middle' as ContentVerticalAlign,
 }
 
@@ -18,7 +18,7 @@ const Modal: FC<ModalProps> = ({
   children,
   isTextClose = false,
   contentVerticalAlign,
-  isMobilePage,
+  isMobile,
   isShowCloseBtn,
   closeText,
   onClose,
@@ -44,13 +44,13 @@ const Modal: FC<ModalProps> = ({
   return (
     <ReactModal
       ariaHideApp={false}
-      className={clsx('custom-modal', className)}
+      className={clsx('custom-modal', isMobile && '--mobile', className)}
       contentRef={(node): void => setModalReference(node)}
       isOpen={isOpen}
+      preventScroll
       onRequestClose={onClose}
       overlayClassName={clsx(
         'custom-modal-overlay',
-        isMobilePage && '--mobile-page',
         `--vertical-${String(contentVerticalAlign)[0].toLowerCase()}`,
       )}
       style={{
@@ -63,7 +63,7 @@ const Modal: FC<ModalProps> = ({
       }}
       {...properties}>
       <div className="flex flex-col">
-        {Boolean(isShowCloseBtn) && Boolean(!isMobilePage) && (
+        {Boolean(isShowCloseBtn) && (
           <button
             type="button"
             className={clsx(
