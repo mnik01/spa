@@ -11,23 +11,28 @@ export const Footer: FC = () => {
   const toolsHandler = () => {
     setIsModalOpened(true)
   }
-  const viewportHeight = Math.max(
-    document.documentElement.clientHeight,
-    window.innerHeight || 0,
+  const [viewportHeight, setViewportHeight] = useState(
+    Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
   )
 
-  const [pageHeight, setPageHeight] = useState(0)
-  useEffect(() => {
-    const scrollContainerNode = document.querySelector('#scrollContainer')
+  // TODO: fix footer postioning. Make absolute when not vertical scroll
 
-    setPageHeight(
-      scrollContainerNode
-        ? scrollContainerNode.getBoundingClientRect().height
-        : 0,
+  // const [pageHeight, setPageHeight] = useState(0)
+  useEffect(() => {
+    // const scrollContainerNode = document.querySelector('#scrollContainer')
+
+    // setPageHeight(
+    //   scrollContainerNode
+    //     ? scrollContainerNode.getBoundingClientRect().height
+    //     : 0,
+    // )
+
+    setViewportHeight(
+      Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
     )
   }, [viewportHeight])
 
-  const isAbsoluteNeeded = pageHeight < viewportHeight
+  // const isAbsoluteNeeded = pageHeight < viewportHeight
 
   const socialMedias = [
     {
@@ -68,9 +73,9 @@ export const Footer: FC = () => {
     <footer
       className={clsx(
         'items-center p-4 custom-footer bg-neutral text-neutral-content',
-        {
-          'bottom-0 absolute': isAbsoluteNeeded,
-        },
+        // {
+        //   'bottom-0 absolute': isAbsoluteNeeded,
+        // },
       )}>
       <Modal
         isMobile={isMobileViewport}

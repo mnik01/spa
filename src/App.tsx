@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'
 const CartPage = lazy(() => import('Pages/Cart/Cart'))
 const CheckoutPage = lazy(() => import('Pages/Checkout/Checkout'))
 const MainPage = lazy(() => import('Pages/Main/Main'))
+const ProductPage = lazy(() => import('Pages/Product/Product'))
 
 export default function App(): ReactElement {
   return (
@@ -35,7 +36,7 @@ export default function App(): ReactElement {
               <Route path={Pages.Checkout} component={CheckoutPage} />
               <Route path="/orders" component={CheckoutPage} />
               <Route path="/order/:orderId" component={CheckoutPage} />
-              <Route path="/p/:sku" component={CheckoutPage} />
+              <Route path="/p/:sku" component={ProductPage} />
               <Route path={Pages.Loading} component={PageLoader} />
             </Switch>
           </Suspense>
