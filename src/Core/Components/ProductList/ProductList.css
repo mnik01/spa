@@ -1,0 +1,7 @@
+.product-list {
+  /* Base  */
+  @apply grid grid-cols-2 gap-4;
+
+  /* Desktop  */
+  @apply md:grid-cols-3 lg:grid-cols-6;
+}

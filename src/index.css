@@ -35,6 +35,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.a-main-shadowed {
-  @apply bg-purple-100 shadow-xl;
+/* stylelint-disable */
+@layer utilities {
+  .a-main-shadowed {
+    @apply bg-purple-100 shadow-xl;
+  }
 }
+/* stylelint-enable */

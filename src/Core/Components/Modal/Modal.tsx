@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { FC, useEffect, useState } from 'react'
 import ReactModal from 'react-modal'
 import { CloseIcon } from '../Icons'
-import './styles/Modal.css'
+import './Modal.css'
 import { ContentVerticalAlign, ModalProps } from './types'
 
 const defaultProps = {

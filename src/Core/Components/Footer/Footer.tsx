@@ -3,7 +3,7 @@ import { useIsMobile } from 'Core/Hooks/useIsMobile'
 import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from '../Modal'
-import './styles/aliases.css'
+import './Footer.css'
 
 export const Footer: FC = () => {
   const { t } = useTranslation()

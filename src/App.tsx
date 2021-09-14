@@ -1,12 +1,12 @@
 import { PageLoader } from 'Core/Components/PageLoader'
 import { skeletonBgColor, skeletonFgColor } from 'Core/constants'
-import { Pages } from 'Core/types'
 import { I18nContext, i18nContextDefaultValue } from 'i18n'
 import { lazy, ReactElement, Suspense } from 'react'
 import { SkeletonTheme } from 'react-loading-skeleton'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Pages } from 'types/enums'
 
 const CartPage = lazy(() => import('Pages/Cart/Cart'))
 const CheckoutPage = lazy(() => import('Pages/Checkout/Checkout'))

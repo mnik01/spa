@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import './styles/aliases.css'
+import './Container.css'
 import { ContainerProps } from './types'
 
 export const Container: FC<ContainerProps> = ({

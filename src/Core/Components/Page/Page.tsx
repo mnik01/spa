@@ -3,6 +3,7 @@ import Scrollbars from 'react-custom-scrollbars'
 import { Container } from '../Container'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
+import './Page.css'
 import { PageProps } from './types'
 
 export const Page: FC<PageProps> = ({ shouldShowHeader = true, children }) => (
@@ -10,10 +11,8 @@ export const Page: FC<PageProps> = ({ shouldShowHeader = true, children }) => (
     <div id="scrollContainer" className="text-gray-700">
       {shouldShowHeader && <Header />}
 
-      <Container className="py-6 h-full">
-        <main className="a-main-shadowed flex flex-col gap-y-4 p-8 sm:rounded-2xl h-5/6">
-          {children}
-        </main>
+      <Container className="container">
+        <main className="main">{children}</main>
       </Container>
 
       <Footer />

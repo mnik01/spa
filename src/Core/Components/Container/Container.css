@@ -1,0 +1,10 @@
+.a-container {
+  /* Base  */
+  @apply container mx-auto;
+
+  /* Mobile  */
+  @apply sm:px-0 sm:w-full;
+
+  /* Desktop  */
+  @apply md:px-8;
+}

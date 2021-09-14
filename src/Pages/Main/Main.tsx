@@ -1,5 +1,5 @@
 import { Page } from 'Core/Components/Page'
-import { ProductCard } from 'Core/Components/ProductCard'
+import { ProductList } from 'Core/Components/ProductList'
 import { FC } from 'react'
 
 const MainPage: FC = () => {
@@ -16,17 +16,9 @@ const MainPage: FC = () => {
     { title: 'Samsung A51+', price: 69_000, sku: 1005 },
   ]
 
-  const ProductList = () => (
-    <div className="product-list grid">
-      {products.map(productInfo => (
-        <ProductCard key={productInfo.sku} {...productInfo} />
-      ))}
-    </div>
-  )
-
   return (
     <Page>
-      <ProductList />
+      <ProductList products={products} />
     </Page>
   )
 }

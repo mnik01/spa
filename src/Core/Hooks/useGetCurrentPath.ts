@@ -1,5 +1,5 @@
-import { Pages } from 'Core/types'
 import { useLocation } from 'react-router-dom'
+import { Pages } from 'types/enums'
 
 export interface UseGetCurrentPathResult {
   pathname: string
