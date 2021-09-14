@@ -11,3 +11,6 @@ Run `yarn build`. The generated files will be on the `dist` folder.
 ### Testing
 
 Run `yarn test`. Tests are performed on production build, so be sure to build your app first.
+
+Template that was used:
+https://github.com/wtchnm/Vitamin
