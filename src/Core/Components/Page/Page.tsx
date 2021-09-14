@@ -8,14 +8,13 @@ import { PageProps } from './types'
 
 export const Page: FC<PageProps> = ({ shouldShowHeader = true, children }) => (
   <Scrollbars style={{ width: '100vw', height: '100vh' }}>
-    <div id="scrollContainer" className="text-gray-700">
+    <div id="scrollContainer" className="scroll-container text-gray-700">
       {shouldShowHeader && <Header />}
 
       <Container className="container">
         <main className="main">{children}</main>
       </Container>
-
-      <Footer />
     </div>
+    <Footer />
   </Scrollbars>
 )

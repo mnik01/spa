@@ -8,11 +8,23 @@
 
 .main {
   /* Base */
-  @apply a-main-shadowed flex flex-col gap-y-4 pt-6 pb-10 px-4 h-5/6;
+  @apply a-main-shadowed flex flex-col gap-y-4 pt-6  px-4 h-5/6;
+
+  /* Extra Mobile */
+  @apply pb-4 mb-14;
 
   /* Mobile */
-  @apply sm:rounded-2xl;
+  @apply sm:pb-4 sm:rounded-2xl sm:mb-16;
 
   /* Desktop */
-  @apply md:pb-6;
+  @apply md:pb-6 md:mb-20;
+}
+
+.scroll-container {
+  min-height: 100%;
+  margin-bottom: -56px;
+}
+.scroll-container::after {
+  content: '';
+  display: block;
 }
