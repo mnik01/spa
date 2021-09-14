@@ -84,6 +84,7 @@ export const Footer: FC = () => {
         isOpen={isModalOpened}>
         <div className="p-5 mt-4 text-center">
           <p>React</p>
+          <p>Typescript</p>
           <p>ES6+</p>
           <p>React router dom</p>
           <p>i18n</p>

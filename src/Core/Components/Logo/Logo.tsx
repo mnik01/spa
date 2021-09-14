@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, MouseEventHandler } from 'react'
+import './Logo.css'
 
 export interface LogoProps {
   className?: string
@@ -28,8 +29,6 @@ export const Logo: FC<LogoProps> = ({ className, onClick = () => {} }) => (
         />
       </svg>
     </div>
-    <h1 className="prose-2xl font-black font-sans text-primary self-center">
-      mnik01
-    </h1>
+    <h1 className="logo-text">mnik01</h1>
   </button>
 )

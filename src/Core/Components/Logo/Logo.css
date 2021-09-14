@@ -1,0 +1,7 @@
+.logo-text {
+  /* Base  */
+  @apply prose-lg font-black font-sans text-primary self-center;
+
+  /* Desktop */
+  @apply md:prose-2xl;
+}
