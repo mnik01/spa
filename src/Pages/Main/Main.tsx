@@ -1,8 +1,11 @@
 import { Page } from 'Core/Components/Page'
 import { ProductList } from 'Core/Components/ProductList'
 import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const MainPage: FC = () => {
+  const { t } = useTranslation()
+
   const products = [
     { title: 'iPhone X', price: 299_000, sku: 1000 },
     {
@@ -18,6 +21,7 @@ const MainPage: FC = () => {
 
   return (
     <Page>
+      <p>{t('common.productsFounded', { count: products.length })}</p>
       <ProductList products={products} />
     </Page>
   )

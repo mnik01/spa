@@ -2,5 +2,6 @@
   "ru": "ru",
   "en": "en",
   "clickToKnowWhatToolsUsed": "Используемые инструменты?",
-  "toMain": "на главную"
+  "toMain": "на главную",
+  "productsFounded": "Найдено {{count}} предложений"
 }

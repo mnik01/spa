@@ -2,5 +2,6 @@
   "ru": "ru",
   "en": "en",
   "clickToKnowWhatToolsUsed": "Used tools?",
-  "toMain": "to main"
+  "toMain": "to main",
+  "productsFounded": "There is {{count}} products founded"
 }

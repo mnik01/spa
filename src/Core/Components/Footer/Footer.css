@@ -1,4 +1,6 @@
 .custom-footer {
+  @apply bg-neutral items-center p-4;
+
   display: flex;
   justify-content: space-between;
   place-items: start;
