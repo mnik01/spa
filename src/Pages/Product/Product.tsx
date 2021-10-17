@@ -1,6 +1,20 @@
+import {Footer} from 'Core/Components/Footer'
+import {Header} from 'Core/Components/Header'
 import { FC } from 'react'
+// TODO: import { Typo } from 'mui01'
+import './Product.css'
 
-const Product: FC = () => <p>Product</p>
+const Product: FC = () => (
+  <div>
+    <Header />
+    <div className="pdp">
+      <div className="pdp__title">Iphone X</div>
+      <div className="pdp__img" />
+    </div>
+    <Footer />
+  </div>
+)
+
 export default Product
 // import getFruits from "api/getFruits";
 // import BackIcon from "components/BackIcon";
