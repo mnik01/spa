@@ -1,21 +1,31 @@
 import {Footer} from 'Core/Components/Footer'
 import {Header} from 'Core/Components/Header'
+import {getProductInfoFromUrl, getProductInfo} from 'Core/Utils'
 import { FC } from 'react'
 // TODO: import { Typo } from 'mui01'
 import './Product.css'
 
-const Product: FC = () => (
-  <div>
-    <Header />
-    <div className="pdp">
-      <div className="pdp__title">Iphone X</div>
-      <div className="pdp__img" />
+const Product: FC = () => {
+  const { sku } = getProductInfoFromUrl()
+  const { title, price, img } = getProductInfo(sku)
+
+  return (
+    <div>
+      <Header />
+      <div className="pdp">
+        <div className="pdp__img">
+          <img src={img} alt={title + 'picture'} />
+        </div>
+        <div className="pdp__title">{ title }</div>
+        <div className="pdp__price">{ price }</div>
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-)
+  )
+}
   
-export default Product
+export default Product;
+
 // import getFruits from "api/getFruits";
 // import BackIcon from "components/BackIcon";
 // import Head from "components/Head";
