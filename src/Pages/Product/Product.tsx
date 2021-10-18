@@ -14,7 +14,7 @@ const Product: FC = () => (
     <Footer />
   </div>
 )
-
+  
 export default Product
 // import getFruits from "api/getFruits";
 // import BackIcon from "components/BackIcon";
