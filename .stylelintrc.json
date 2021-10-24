@@ -1,11 +1,37 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
   "rules": {
     "at-rule-no-unknown": [
       true,
       {
         "ignoreAtRules": ["tailwind"]
       }
-    ]
+    ],
+    "indentation": 2,
+    "string-quotes": "single",
+    "no-duplicate-selectors": true,
+    "color-hex-case": "upper",
+    "color-hex-length": "short",
+    "color-named": "always-where-possible",
+    "selector-no-qualifying-type": true,
+    "selector-combinator-space-after": "always",
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-no-important": true,
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "property-no-vendor-prefix": true,
+    "number-leading-zero": "never",
+    "function-url-quotes": "always",
+    "comment-whitespace-inside": "always",
+    "comment-empty-line-before": "never",
+    "rule-empty-line-before": "always-multi-line",
+    "selector-pseudo-element-colon-notation": "single",
+    "selector-no-universal": true,
+    "selector-no-type": true,
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-parentheses-space-inside": "always",
+    "media-feature-colon-space-before": "never",
+    "media-feature-colon-space-after": "always"
   }
 }

@@ -1,113 +1,36 @@
-import {Footer} from 'Core/Components/Footer'
-import {Header} from 'Core/Components/Header'
-import {getProductInfoFromUrl, getProductInfo} from 'Core/Utils'
+import { Container } from 'Core/Components/Container'
+import { Page } from 'Core/Components/Page'
+import { getProductInfo, getProductInfoFromUrl } from 'Core/Utils'
 import { FC } from 'react'
 // TODO: import { Typo } from 'mui01'
-import './Product.css'
+import './Product.scss'
 
 const Product: FC = () => {
   const { sku } = getProductInfoFromUrl()
   const { title, price, img } = getProductInfo(sku)
 
   return (
-    <div>
-      <Header />
-      <div className="pdp">
-        <div className="pdp__img">
-          <img src={img} alt={title + 'picture'} />
+    <Page mainClassName="mt-4" rounded={false} fullSize>
+      <Container>
+        <div className="pdp">
+          <div className="pdp__img-and-info">
+            <picture className="pdp__img">
+              <img
+                className="rounded-xl"
+                title={title}
+                alt="product pic"
+                src={img}
+              />
+            </picture>
+            <div>
+              <h1 className="pdp__title">{title}</h1>
+              <h2 className="pdp__price">{price}</h2>
+            </div>
+          </div>
         </div>
-        <div className="pdp__title">{ title }</div>
-        <div className="pdp__price">{ price }</div>
-      </div>
-      <Footer />
-    </div>
+      </Container>
+    </Page>
   )
 }
-  
-export default Product;
 
-// import getFruits from "api/getFruits";
-// import BackIcon from "components/BackIcon";
-// import Head from "components/Head";
-// import ImageAttribution from "components/ImageAttribution";
-// import LoadingOrError from "components/LoadingOrError";
-// import { useQuery } from "react-query";
-// import { Link, Redirect, RouteComponentProps } from "react-router-dom";
-
-// export default function DetailsPage({
-//   match,
-// }: RouteComponentProps<{ fruitName: string }>): ReactElement {
-//   const { isLoading, isError, error, data } = useQuery("fruits", getFruits);
-//   if (isLoading || isError) {
-//     return <LoadingOrError error={error as Error} />;
-//   }
-
-//   const { fruitName } = match.params;
-//   const fruit = data?.find(
-//     (f) => f.name.toLowerCase() === fruitName.toLowerCase()
-//   );
-//   if (!fruit) {
-//     return <Redirect to="/" />;
-//   }
-
-//   const isMobile = window.matchMedia("(min-width: 640px)").matches;
-//   const imageWidth =
-//     (isMobile ? window.innerWidth * 0.4 : window.innerWidth) *
-//     window.devicePixelRatio;
-//   const imageHeight =
-//     (isMobile ? window.innerHeight : window.innerHeight * 0.3) *
-//     window.devicePixelRatio;
-
-//   return (
-//     <>
-//       <Head title={fruit.name} />
-//       <div className="min-h-screen flex flex-col sm:flex-row items-center">
-//         <div className="relative">
-//           <img
-//             data-cy="FruitImage"
-//             width={imageWidth}
-//             height={imageHeight}
-//             style={{
-//               backgroundColor: fruit.image.color,
-//             }}
-//             src={`${fruit.image.url}&w=${imageWidth}&h=${imageHeight}`}
-//             alt={fruit.name}
-//           />
-//           <ImageAttribution author={fruit.image.author} />
-//         </div>
-//         <div className="my-8 sm:my-0 sm:ml-16">
-//           <Link data-cy="BackLink" to="/" className="flex items-center">
-//             <BackIcon />
-//             <span className="ml-4 text-xl">Back</span>
-//           </Link>
-
-//           <h1
-//             data-cy="FruitName"
-//             className="mt-2 sm:mt-8 text-6xl font-extrabold"
-//           >
-//             {fruit.name}
-//           </h1>
-//           <h2 className="mt-3 text-xl text-gray-500 dark:text-gray-400">
-//             Vitamins per 100 g (3.5 oz)
-//           </h2>
-//           <table className="mt-8 text-lg">
-//             <thead>
-//               <tr>
-//                 <th className="px-4 py-2">Vitamin</th>
-//                 <th className="px-4 py-2">Quantity</th>
-//               </tr>
-//             </thead>
-//             <tbody>
-//               {fruit.metadata.map(({ name, value }) => (
-//                 <tr key={`FruitVitamin-${name}`} className="font-medium">
-//                   <td className="border border-gray-300 px-4 py-2">{name}</td>
-//                   <td className="border border-gray-300 px-4 py-2">{value}</td>
-//                 </tr>
-//               ))}
-//             </tbody>
-//           </table>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
+export default Product

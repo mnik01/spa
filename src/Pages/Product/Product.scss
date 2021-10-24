@@ -1,0 +1,19 @@
+.pdp {
+  height: 100%;
+
+  &__title {
+    padding-bottom: 8px;
+  }
+
+  &__img-and-info {
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+
+  &__img {
+    img {
+    }
+  }
+}
