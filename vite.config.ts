@@ -29,7 +29,9 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        theme_color: '#C7D2FE',
+        theme_color: '#EDE9FE',
+        background_color: '#EDE9FE',
+        display: "standalone",
         icons: [
           {
             src: '/android-chrome-192x192.png',
