@@ -3,13 +3,25 @@
 
   &__title {
     padding-bottom: 8px;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+  }
+  &__price {
+    padding-bottom: 8px;
+    margin: 0;
+    padding: 0;
   }
 
   &__img-and-info {
-    background-color: red;
+    background-color: #b7c3e0;
+    padding: 16px;
+    border-radius: 16px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
+    color: white;
   }
 
   &__img {
